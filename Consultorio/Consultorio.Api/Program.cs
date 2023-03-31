@@ -36,7 +36,7 @@ namespace Consultorio.Api
                     ValidIssuer = "http://localhost:7256",
                     ValidAudience = "http://localhost:7256",
                     IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes("password"))
+                        Encoding.UTF8.GetBytes("passwordSuperSecreto"))
                 }
             );
 
@@ -77,6 +77,8 @@ namespace Consultorio.Api
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
