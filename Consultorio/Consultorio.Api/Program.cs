@@ -2,7 +2,10 @@ using Consultorio.Aplicacion.Servicios;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Contextos;
 using Consultorio.infraestructura.SqlServer.Repositorios;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Consultorio.Api
 {
@@ -13,6 +16,30 @@ namespace Consultorio.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            //Seguridad
+            builder.Services.AddAuthentication(opt =>
+                {
+                    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+
+                }
+            ).AddJwtBearer(opt =>
+            opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+
+                    ValidIssuer = "http://localhost:7256",
+                    ValidAudience = "http://localhost:7256",
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes("password"))
+                }
+            );
+
 
             //Configurar conexion a base de datos, para el intyector de dependencias, definismoa como crear lo que se necesita en parametros constructores
             
