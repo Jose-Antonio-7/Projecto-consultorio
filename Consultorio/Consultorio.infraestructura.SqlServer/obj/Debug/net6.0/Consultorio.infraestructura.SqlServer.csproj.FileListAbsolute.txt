@@ -1,0 +1,17 @@
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\bin\Debug\net6.0\Consultorio.infraestructura.SqlServer.deps.json
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\bin\Debug\net6.0\Consultorio.infraestructura.SqlServer.dll
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\bin\Debug\net6.0\Consultorio.infraestructura.SqlServer.pdb
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\bin\Debug\net6.0\Consultorio.Dominio.dll
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\bin\Debug\net6.0\Consultorio.Dominio.pdb
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.csproj.AssemblyReference.cache
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.AssemblyInfoInputs.cache
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.AssemblyInfo.cs
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.csproj.CoreCompileInputs.cache
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.csproj.CopyComplete
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.dll
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\refint\Consultorio.infraestructura.SqlServer.dll
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.pdb
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\ref\Consultorio.infraestructura.SqlServer.dll
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\bin\Debug\net6.0\Consultorio.infraestructura.SqlServer.runtimeconfig.json
+C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.infraestructura.SqlServer\obj\Debug\net6.0\Consultorio.infraestructura.SqlServer.genruntimeconfig.cache

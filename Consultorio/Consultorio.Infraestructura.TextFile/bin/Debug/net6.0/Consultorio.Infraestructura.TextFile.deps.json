@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Consultorio.Infraestructura.TextFile/1.0.0": {
+        "dependencies": {
+          "Consultorio.Dominio": "1.0.0"
+        },
+        "runtime": {
+          "Consultorio.Infraestructura.TextFile.dll": {}
+        }
+      },
+      "Consultorio.Dominio/1.0.0": {
+        "runtime": {
+          "Consultorio.Dominio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Consultorio.Infraestructura.TextFile/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Consultorio.Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
