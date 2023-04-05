@@ -30,7 +30,7 @@ namespace Consultorio.Api.Controllers
                 var tokenOptions = new JwtSecurityToken(
                     issuer: "http://localhost:7256",
                     audience: "http://localhost:7256",
-                    expires: DateTime.Now.AddSeconds(30),
+                    expires: DateTime.Now.AddSeconds(60),
                     signingCredentials: credentials,
                     claims: new List<Claim>() { new Claim("email", "ivanh@techsoft.com.mx") }
                     );
@@ -38,7 +38,7 @@ namespace Consultorio.Api.Controllers
                 var tokenString = new JwtSecurityTokenHandler()
                     .WriteToken(tokenOptions);
 
-                return Ok(new { Token = tokenString });
+                return Ok( tokenString );
 
 
             }

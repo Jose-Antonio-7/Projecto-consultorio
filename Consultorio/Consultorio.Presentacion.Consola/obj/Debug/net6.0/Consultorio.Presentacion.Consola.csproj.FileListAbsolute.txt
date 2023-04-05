@@ -63,3 +63,8 @@ C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Presentacion.
 C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Presentacion.Consola\bin\Debug\net6.0\Consultorio.infraestructura.SqlServer.pdb
 C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Presentacion.Consola\bin\Debug\net6.0\Consultorio.Infraestructura.TextFile.pdb
 C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Presentacion.Consola\bin\Debug\net6.0\Dapper.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion.Consola\obj\Debug\net6.0\Consultorio.Presentacion.Consola.csproj.AssemblyReference.cache
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion.Consola\obj\Debug\net6.0\Consultorio.Presentacion.Consola.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion.Consola\obj\Debug\net6.0\Consultorio.Presentacion.Consola.AssemblyInfoInputs.cache
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion.Consola\obj\Debug\net6.0\Consultorio.Presentacion.Consola.AssemblyInfo.cs
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion.Consola\obj\Debug\net6.0\Consultorio.Presentacion.Consola.csproj.CoreCompileInputs.cache

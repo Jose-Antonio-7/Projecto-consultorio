@@ -9,15 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Consultorio.Presentacion.Modelos;
 
 namespace Consultorio.Presentacion.Formularios
 {
     public partial class FrmClientes : Form
     {
-        public FrmClientes()
+        private AuthContext _authContext;
+        public FrmClientes(AuthContext authContext)
         {
             InitializeComponent();
+            _authContext = authContext;
         }
         List<Cliente> clienteList = new List<Cliente>();
 
@@ -68,7 +70,7 @@ namespace Consultorio.Presentacion.Formularios
 
             var cliente = new Cliente(nombre, apellido, edad, direccion, telefono);
 
-            var clienteService = new ClienteService(); // Checar por que este es nulo
+            var clienteService = new ClienteService(_authContext); // Checar por que este es nulo
 
             await clienteService.Almacenar(cliente); 
 
@@ -90,7 +92,7 @@ namespace Consultorio.Presentacion.Formularios
         {
             try
             {
-                var clienteService = new ClienteService();
+                var clienteService = new ClienteService(_authContext);
 
                 btnConfirmarCliente.Enabled = false;
 

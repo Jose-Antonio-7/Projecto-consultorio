@@ -150,6 +150,7 @@ C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consult
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.csproj.AssemblyReference.cache
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.Formularios.FrmClientes.resources
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.Formularios.FrmDoctores.resources
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.Formularios.FrmLogin.resources
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.FrmPrincipal.resources
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.csproj.GenerateResource.cache
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.GeneratedMSBuildEditorConfig.editorconfig
