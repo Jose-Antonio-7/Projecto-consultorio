@@ -1,6 +1,7 @@
 ﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Contextos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
