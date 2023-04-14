@@ -13,3 +13,18 @@ C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Infraestructu
 C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\refint\Consultorio.Infraestructura.TextFile.dll
 C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.pdb
 C:\Users\Antonio\Desktop\Programas mios\C#\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\ref\Consultorio.Infraestructura.TextFile.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\bin\Debug\net6.0\Consultorio.Infraestructura.TextFile.deps.json
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\bin\Debug\net6.0\Consultorio.Infraestructura.TextFile.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\bin\Debug\net6.0\Consultorio.Infraestructura.TextFile.pdb
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\bin\Debug\net6.0\Consultorio.Dominio.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\bin\Debug\net6.0\Consultorio.Dominio.pdb
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.csproj.AssemblyReference.cache
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.AssemblyInfoInputs.cache
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.AssemblyInfo.cs
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.csproj.CoreCompileInputs.cache
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.csproj.CopyComplete
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\refint\Consultorio.Infraestructura.TextFile.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\Consultorio.Infraestructura.TextFile.pdb
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Infraestructura.TextFile\obj\Debug\net6.0\ref\Consultorio.Infraestructura.TextFile.dll

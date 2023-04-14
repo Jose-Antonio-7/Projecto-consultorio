@@ -1,6 +1,7 @@
 ﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Contextos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,24 +19,24 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
             _context = context;
         }
 
-        public void AcceptChanges()
+        public async Task AcceptChanges()
         {
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public T GetById(string id)
+        public async Task<T> GetById(string id)
         {
-            return _context.Set<T>().Where(e => e.Id == id).FirstOrDefault();
+            return await _context.Set<T>().Where(e => e.Id == id).FirstOrDefaultAsync();
         }
 
-        public void Save(T entity)
+        public async Task Save(T entity)
         {
-            _context.Set<T>().Add(entity);
+            await _context.Set<T>().AddAsync(entity);
         }
     }
 }

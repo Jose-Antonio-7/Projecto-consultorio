@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Consultorio.Dominio.Repositorios
 {
     public interface IConsultasRepository : IRepository<Consulta>
     {
-        List<Consulta> GetCustormerAllDates(string clienteId);
-        List<Consulta> GetCustormerDates(string clienteId, DateTime fecha);
-        List<Consulta> GetDoctorDates(string doctorId, DateTime fecha);
+        Task<List<Consulta>> GetCustormerAllDates(string clienteId);
+        Task<List<Consulta>> GetCustormerDates(string clienteId, DateTime fecha);
+        Task<List<Consulta>> GetDoctorDates(string doctorId, DateTime fecha);
 
     }
 }

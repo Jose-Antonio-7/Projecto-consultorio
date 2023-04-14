@@ -106,6 +106,24 @@ namespace Consultorio.infraestructura.SqlServer.Migrations
                     b.ToTable("Doctores");
                 });
 
+            modelBuilder.Entity("Consultorio.Dominio.Entidades.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Contraseña")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("Consultorio.Dominio.Entidades.Consulta", b =>
                 {
                     b.HasOne("Consultorio.Dominio.Entidades.Cliente", "Cliente")

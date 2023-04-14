@@ -32,6 +32,23 @@ namespace Consultorio.infraestructura.SqlServer.Contextos
 
         public DbSet<Consulta> Consultas { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder model)
+        //{
+        //    model.Entity<Cliente>()
+        //        .ToTable("Clientes")
+        //        .HasKey(e=>e.Id);
+
+        //    model.Entity<Cliente>()
+        //        .Property(e => e.Nombre)
+        //        .HasColumnName("NombreCliente")
+        //        .HasColumnType("nvarchar")
+        //        .HasMaxLength(30)
+        //        .HasDefaultValue("Sin nombre")
+        //        .IsRequired();
+
+        //}
 
         //public DbSet<Doctor> Doctoresprueba { get; set; }
 

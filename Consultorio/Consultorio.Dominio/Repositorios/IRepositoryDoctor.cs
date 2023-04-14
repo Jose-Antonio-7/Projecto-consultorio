@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Consultorio.Dominio.Repositorios
 {
     public interface IRepositoryDoctor : IRepository<Doctor>
     {
-        List<Doctor> GetDoctorByCedula(string cedula);
+        Task<List<Doctor>> GetDoctorByCedula(string cedula);
 
     }
 }

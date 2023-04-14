@@ -24,17 +24,17 @@ namespace Consultorio.Aplicacion.Servicios
             _repo = new DoctorRepository(_context);
         }
 
-        public void Almacenar(Doctor doctor)
+        public async Task Almacenar(Doctor doctor)
         {
             _repo.Save(doctor);
-            _repo.AcceptChanges();
+            await _repo.AcceptChanges();
 
 
         }
 
-        public List<Doctor> ConsultarTodos()
+        public async Task<List<Doctor>> ConsultarTodos()
         {
-            return _repo.GetAll();
+            return await _repo.GetAll(); //corregir despues para hacerlo async
         }
 
         //public void CrearDoctor()

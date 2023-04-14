@@ -2,19 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Consultorio.Dominio.Repositorios
 {
     public interface IRepository<TEntity>
     {
 
-        void Save(TEntity entity);
+        Task Save(TEntity entity);
 
-        List<TEntity> GetAll();
+        Task<List<TEntity>> GetAll();
 
-        void AcceptChanges();
+        Task AcceptChanges();
 
-        TEntity GetById(string id);
+        Task<TEntity> GetById(string id);
 
     }
 }
