@@ -29,26 +29,42 @@ namespace Consultorio.infraestructura.SqlServer.Migrations
 
                     b.Property<string>("Apellido")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin apellido")
+                        .HasColumnName("ApellidoCliente");
 
                     b.Property<string>("Direccion")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin direccion")
+                        .HasColumnName("DireccionCliente");
 
                     b.Property<int>("Edad")
                         .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin nombre")
+                        .HasColumnName("NombreCliente");
 
                     b.Property<string>("Telefono")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)")
+                        .HasDefaultValue("Sin numero")
+                        .HasColumnName("TelefonoCliente");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clientes");
+                    b.ToTable("Clientes", (string)null);
                 });
 
             modelBuilder.Entity("Consultorio.Dominio.Entidades.Consulta", b =>
@@ -62,7 +78,11 @@ namespace Consultorio.infraestructura.SqlServer.Migrations
 
                     b.Property<string>("Direccion")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin direccion")
+                        .HasColumnName("DireccionConsulta");
 
                     b.Property<string>("DoctorId")
                         .IsRequired()
@@ -77,7 +97,7 @@ namespace Consultorio.infraestructura.SqlServer.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Consultas");
+                    b.ToTable("Consultas", (string)null);
                 });
 
             modelBuilder.Entity("Consultorio.Dominio.Entidades.Doctor", b =>
@@ -87,23 +107,65 @@ namespace Consultorio.infraestructura.SqlServer.Migrations
 
                     b.Property<string>("Apellido")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin apellido")
+                        .HasColumnName("ApellidoDoctor");
 
                     b.Property<string>("Cedula")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin cedula")
+                        .HasColumnName("CedulaDoctor");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin nombre")
+                        .HasColumnName("NombreDoctor");
 
                     b.Property<string>("Telefono")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)")
+                        .HasDefaultValue("Sin numero")
+                        .HasColumnName("TelefonoDoctor");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctores");
+                    b.ToTable("Doctores", (string)null);
+                });
+
+            modelBuilder.Entity("Consultorio.Dominio.Entidades.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Contraseña")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin Contraseña")
+                        .HasColumnName("ContraseñaUser");
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Sin login")
+                        .HasColumnName("LoginUser");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Consultorio.Dominio.Entidades.Consulta", b =>

@@ -34,7 +34,7 @@ namespace Consultorio.Aplicacion.Servicios
 
         public List<Doctor> ConsultarTodos()
         {
-            return _repo.GetAll();
+            return _repo.GetAll(); //corregir despues para hacerlo async
         }
 
         //public void CrearDoctor()
