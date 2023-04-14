@@ -23,8 +23,6 @@ namespace Consultorio.Api
             // Add services to the container.
 
             //Agregamos Healthchecks
-            builder.Services.AddHealthChecks()
-                .AddCheck("App Running", () => HealthCheckResult.Healthy("Api is working as expected"));
 
             builder.Services.AddHealthChecks()
                 .AddCheck("App Running", () => HealthCheckResult.Healthy("Api is working as expected")
@@ -186,8 +184,7 @@ namespace Consultorio.Api
             app.MapHealthChecks("/health-details", new HealthCheckOptions
             {
                 ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-            }
-);
+            });
 
             app.UseHttpsRedirection();
 

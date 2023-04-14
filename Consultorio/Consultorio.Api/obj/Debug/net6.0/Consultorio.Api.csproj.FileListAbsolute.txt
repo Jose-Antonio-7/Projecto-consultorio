@@ -191,3 +191,8 @@ C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consult
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\HealthChecks.SqlServer.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Api\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
