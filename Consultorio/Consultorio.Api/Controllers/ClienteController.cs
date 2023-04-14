@@ -14,6 +14,7 @@ namespace Consultorio.Api.Controllers
         private readonly Context _context;
         private readonly ClienteService _clienteService;
         private readonly ConsultasServices _consultasServices;
+        private readonly ILogger<ClienteController> _logger;
 
         public ClienteController(Context context, ClienteService clienteService, ConsultasServices consultasServices)
         {
@@ -24,11 +25,19 @@ namespace Consultorio.Api.Controllers
 
         [HttpGet]
         [Authorize]
-        public List<Cliente> ConsultarClientes()
+        public ActionResult<List<Cliente>> ConsultarClientes()
         {
             //var servicio = new ClienteService(_context);
+            try
+            {
+                return Ok( _clienteService.ConsultarTodos());
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
 
-            return _clienteService.ConsultarTodos();
+            //return _clienteService.ConsultarTodos();
         }
 
         [HttpPost]

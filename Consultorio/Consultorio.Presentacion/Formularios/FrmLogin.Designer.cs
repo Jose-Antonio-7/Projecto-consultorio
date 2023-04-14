@@ -34,6 +34,8 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnContinuar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,11 +90,32 @@
             this.btnContinuar.UseVisualStyleBackColor = true;
             this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(325, 383);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Crear usuario (no)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnCrear_click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(335, 365);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "No tienes usuario?";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 444);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.btnContinuar);
@@ -114,5 +137,7 @@
         private TextBox txtCorreo;
         private TextBox txtContraseña;
         private Button btnContinuar;
+        private Button button1;
+        private Label label4;
     }
 }

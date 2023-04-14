@@ -2,10 +2,14 @@ using Consultorio.Aplicacion.Servicios;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Contextos;
 using Consultorio.infraestructura.SqlServer.Repositorios;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Text;
 
 namespace Consultorio.Api
@@ -17,6 +21,20 @@ namespace Consultorio.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            //Agregamos Healthchecks
+            builder.Services.AddHealthChecks()
+                .AddCheck("App Running", () => HealthCheckResult.Healthy("Api is working as expected"));
+
+            builder.Services.AddHealthChecks()
+                .AddCheck("App Running", () => HealthCheckResult.Healthy("Api is working as expected")
+                )
+                .AddSqlServer(
+                    connectionString: "Server = DESKTOP-RQBKGG3; Database = Consultorio; Trusted_connection = yes", //Duda
+                    healthQuery: "select 1",
+                    name: "SQL Server Status",
+                    failureStatus: HealthStatus.Unhealthy
+                );
 
             //Seguridad
             builder.Services.AddAuthentication(opt =>
@@ -41,6 +59,24 @@ namespace Consultorio.Api
                 }
             );
 
+            //Implementacion de Serilog
+            //Log.Logger = new LoggerConfiguration()
+            //    .MinimumLevel.Information()
+            //    .WriteTo.Console()
+            //    .WriteTo.SQLite(@"C:\Logs\Apiconsultorio.db")
+            //    .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
+            //    .CreateLogger();
+
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(configuration)
+                .CreateLogger();
+
+            builder.Host.UseSerilog();
 
             //Configurar conexion a base de datos, para el intyector de dependencias, definismoa como crear lo que se necesita en parametros constructores
             
@@ -49,6 +85,7 @@ namespace Consultorio.Api
 
             builder.Services.AddScoped<ClienteService>();
             builder.Services.AddScoped<ConsultasServices>();
+            builder.Services.AddScoped<UserService>();
 
             //Agregado por mi para inyecccion de dependencias
             builder.Services.AddScoped<DoctorService>();
@@ -60,6 +97,8 @@ namespace Consultorio.Api
             builder.Services.AddScoped<IConsultasRepository, ConsultasRepository>();
             //builder.Services.AddScoped < IConsultasRepository, ConsultasRepository, IClienteRepository ClienteRepository, IRepositoryDoctor DoctorRepository > ();
             builder.Services.AddScoped<IRepositoryDoctor, DoctorRepository>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
 
 
@@ -141,11 +180,22 @@ namespace Consultorio.Api
                 app.UseSwaggerUI();
             }
 
+            //mapeo de endpoint en el archivo
+            app.MapHealthChecks("/health-check");
+
+            app.MapHealthChecks("/health-details", new HealthCheckOptions
+            {
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            }
+);
+
             app.UseHttpsRedirection();
 
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseSerilogRequestLogging();
 
             app.MapControllers();
 

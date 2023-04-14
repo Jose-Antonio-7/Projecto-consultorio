@@ -1,4 +1,7 @@
 ﻿using Consultorio.Api.Dtos;
+using Consultorio.Aplicacion.Servicios;
+using Consultorio.Dominio.Entidades;
+using Consultorio.infraestructura.SqlServer.Contextos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,15 +14,31 @@ namespace Consultorio.Api.Controllers
     [Route("api/v1")]
     public class SecurityController : ControllerBase
     {
+        private readonly UserService _userServices;
+        private readonly Context _context;
+
+        public SecurityController(Context context, UserService userServices)
+        {
+            _context = context;
+            _userServices = userServices;
+        }
+
         [HttpPost("login")]
         public ActionResult Login([FromBody] UserAuth user)
         {
-            if(user == null)
+            var Login = user.Login;
+            var Contraseña = user.Contraseña;
+            User usuarioConsultado = _userServices.ConsultarUser(Login);
+
+
+            if (user == null || usuarioConsultado == null)
             {
                 return BadRequest("Usuario: invalido");
             }
 
-            if(user.Login == "ivanh" && user.Contraseña == "pruebas")
+
+            //Se necesita crear una exepcion para cuando sea nulo
+            if(user.Login == usuarioConsultado.Login && user.Contraseña == usuarioConsultado.Contraseña)
             {
                 var secretkey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes("passwordSuperSecreto"));

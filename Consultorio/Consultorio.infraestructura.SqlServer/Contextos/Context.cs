@@ -32,6 +32,8 @@ namespace Consultorio.infraestructura.SqlServer.Contextos
 
         public DbSet<Consulta> Consultas { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
 
         //public DbSet<Doctor> Doctoresprueba { get; set; }
 

@@ -23,10 +23,7 @@ namespace Consultorio.Presentacion.Formularios
 
         private async void btnContinuar_click(object sender, EventArgs e)
         {
-
-
             var correo = txtCorreo.Text;
-
             var contraseña = txtContraseña.Text;
 
             User user = new User(correo, contraseña);
@@ -34,8 +31,6 @@ namespace Consultorio.Presentacion.Formularios
             var securityService = new SecurityService(); // Checar por que este es nulo
 
             var httpmessage = await securityService.Login(user);
-
-
 
             if (httpmessage != null)
             {
@@ -47,22 +42,13 @@ namespace Consultorio.Presentacion.Formularios
             {
 
             }
-
-            //if (correo == "ivanh" && contraseña == "pruebas")
-            //{
-            //    frmprincipal.ShowDialog();
-            //}
-            //else
-            //{
-
-            //}
-
-
-
-
-
         }
 
-        
+        private async void btnCrear_click(object sender, EventArgs e)
+        {
+            //var FrmPrincipal = new FrmUsers(_authContext);
+            //FrmPrincipal.ShowDialog();
+        }
+
     }
 }

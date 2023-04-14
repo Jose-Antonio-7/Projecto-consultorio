@@ -18,21 +18,13 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
             _context = context;
         }
 
-        //public List<Cliente> GetAll()
-        //{
-        //    return _context.Clientes.ToList();
-        //}
+      
 
         public List<Cliente> GetClientesByAge(int age)
         {
             throw new NotImplementedException();
         }
 
-        //public void Save(Cliente cliente)
-        //{
-        //    _context.Clientes.Add(cliente);
-        //    _context.SaveChanges();
-
-        //}
+       
     }
 }

@@ -27,5 +27,11 @@ namespace Consultorio.Presentacion
 
             frmDoctores.ShowDialog();
         }
+
+        private void btnCrear_click(object sender, EventArgs e)
+        {
+            var FrmPrincipal = new FrmUsers(_authContext);
+            FrmPrincipal.ShowDialog();
+        }
     }
 }

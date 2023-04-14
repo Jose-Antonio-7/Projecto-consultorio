@@ -16,6 +16,8 @@ namespace Consultorio.Presentacion
             //Application.Run(new FrmPrincipal());
 
             Application.Run(new FrmLogin());
+            //Application.Run(new FrmUsers());
+
 
 
         }

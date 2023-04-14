@@ -51,31 +51,12 @@ namespace Consultorio.Presentacion.Formularios
 
         private async Task GuardarCliente(string nombre, string apellido, int edad, string direccion, string telefono)
         {
-            //if (string.IsNullOrWhiteSpace(nombre))
-            //{
-            //    throw new ArgumentException("Los valores no son validos", "Nombre:");
-            //}
-            //if (string.IsNullOrWhiteSpace(apellido))
-            //{
-            //    throw new ArgumentException("Los valores no son validos", "Apellido:");
-            //}
-            //if (string.IsNullOrWhiteSpace(direccion))
-            //{
-            //    throw new ArgumentException("Los valores no son validos", "Direccion:");
-            //}
-            //if (string.IsNullOrWhiteSpace(telefono))
-            //{
-            //    throw new ArgumentException("Los valores no son validos", "Telefono:");
-            //}
 
             var cliente = new Cliente(nombre, apellido, edad, direccion, telefono);
 
             var clienteService = new ClienteService(_authContext); // Checar por que este es nulo
 
             await clienteService.Almacenar(cliente); 
-
-
-            //List<Cliente> Clientes = context.Clientes.ToList();
 
             dtgClientes.DataSource = await clienteService.ConsultarTodos();
 

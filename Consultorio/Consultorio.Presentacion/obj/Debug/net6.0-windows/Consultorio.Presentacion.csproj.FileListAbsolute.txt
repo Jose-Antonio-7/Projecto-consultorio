@@ -163,3 +163,4 @@ C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consult
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.pdb
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.genruntimeconfig.cache
 C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\ref\Consultorio.Presentacion.dll
+C:\Users\Antonio\Desktop\Programas mios\Projecto consultorio\Consultorio\Consultorio.Presentacion\obj\Debug\net6.0-windows\Consultorio.Presentacion.Formularios.FrmUsers.resources
