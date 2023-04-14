@@ -1,6 +1,7 @@
 ﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Contextos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,9 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
             _context.SaveChanges();
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return await _context.Set<T>().ToListAsync();
         }
 
         public T GetById(string id)

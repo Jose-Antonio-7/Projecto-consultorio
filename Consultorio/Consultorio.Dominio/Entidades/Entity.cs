@@ -6,7 +6,7 @@ namespace Consultorio.Dominio.Entidades
 {
     public class Entity
     {
-        public string Id { get; set; }
+        public string Id { get; private set; }
 
         public Entity()
         {

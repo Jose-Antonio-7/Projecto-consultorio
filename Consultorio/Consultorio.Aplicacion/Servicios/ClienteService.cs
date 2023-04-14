@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace Consultorio.Aplicacion.Servicios
 {
@@ -15,12 +16,14 @@ namespace Consultorio.Aplicacion.Servicios
     {
         private readonly IClienteRepository _repo;
         private readonly Context _context;
+        private readonly ILogger<ClienteService> _logger;
 
 
-        public ClienteService(Context context, IClienteRepository repo)
+        public ClienteService(Context context, IClienteRepository repo, ILogger<ClienteService> logger)
         {
             _context = context;
             _repo = repo;
+            _logger = logger;
             //_repo = new ClienteRepository(_context);
         }
 
@@ -31,9 +34,9 @@ namespace Consultorio.Aplicacion.Servicios
 
         }
 
-        public List<Cliente> ConsultarTodos()
+        public async Task<List<Cliente>> ConsultarTodos()
         {
-            return _repo.GetAll();
+            return await _repo.GetAll();
         }
 
         public Cliente ConsultarCliente(string id)

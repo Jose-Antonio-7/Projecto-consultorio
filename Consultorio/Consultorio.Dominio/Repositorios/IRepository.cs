@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Consultorio.Dominio.Repositorios
 {
@@ -10,7 +11,7 @@ namespace Consultorio.Dominio.Repositorios
 
         void Save(TEntity entity);
 
-        List<TEntity> GetAll();
+        Task<List<TEntity>> GetAll();
 
         void AcceptChanges();
 
