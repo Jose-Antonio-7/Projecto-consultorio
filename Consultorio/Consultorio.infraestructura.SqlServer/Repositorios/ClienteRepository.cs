@@ -25,7 +25,7 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
         //    throw new NotImplementedException();
         //}
 
-        List<Cliente> IClienteRepository.GetClientesByAge(int age)
+        Task<List<Cliente>> IClienteRepository.GetClientesByAge(int age)
         {
             throw new NotImplementedException();
         }

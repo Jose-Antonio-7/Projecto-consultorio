@@ -21,21 +21,21 @@ namespace Consultorio.Aplicacion.Servicios
             _repo = repo;
         }
 
-        public void Almacenar(User user)
+        public async Task Almacenar(User user)
         {
             _repo.Save(user);
-            _repo.AcceptChanges();
+            await _repo.AcceptChanges();
 
         }
 
-        public List<User> ConsultarTodos()
+        public async Task<List<User>> ConsultarTodos()
         {
-            return _repo.GetAll(); //corregir despues para hacerlo async
+            return await _repo.GetAll(); //corregir despues para hacerlo async
         }
 
-        public User ConsultarUser(string login)
+        public async Task<User> ConsultarUser(string login)
         {
-            return _repo.GetClientesByLogin(login);
+            return await _repo.GetClientesByLogin(login);
         }
     }
 }

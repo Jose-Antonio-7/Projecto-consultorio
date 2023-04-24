@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Consultorio.Dominio.Repositorios
 {
     public interface IClienteRepository :IRepository<Cliente>
     {
 
-        List<Cliente> GetClientesByAge(int age);
+        Task<List<Cliente>> GetClientesByAge(int age);
 
     }
 }

@@ -24,27 +24,27 @@ namespace Consultorio.Api.Controllers
 
         [HttpGet]
         //[Authorize] 
-        public List<User> ConsultarUsers()
+        public async Task<List<User>> ConsultarUsers()
         {
-            return _usersService.ConsultarTodos();
+            return await _usersService.ConsultarTodos();
         }
 
         [HttpPost]
         [Authorize] //comentar para que funcione crear en el login
-        public ActionResult CrearUser(User user)
+        public async Task<ActionResult> CrearUser(User user)
         {
-            _usersService.Almacenar(user);
+            await _usersService.Almacenar(user);
 
             return Ok();
         }
 
         [HttpGet("{login}")]
         //[Authorize]
-        public ActionResult<User> ConsultarUserPorLogin(string login)
+        public async Task<ActionResult<User>> ConsultarUserPorLogin(string login)
         {
-            var user = _usersService.ConsultarUser(login);
+            //var user = _usersService.ConsultarUser(login);
 
-            return Ok(user);
+            return Ok(await _usersService.ConsultarUser(login));
         }
     }
 }

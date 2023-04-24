@@ -36,12 +36,12 @@ namespace Consultorio.Aplicacion.Servicios
 
         }
 
-        public List<Consulta> CitasCliente(string clienteId)
+        public async Task<List<Consulta>> CitasCliente(string clienteId)
         {
-            return _consultaRepo.GetCustormerAllDates(clienteId);
+            return await _consultaRepo.GetCustormerAllDates(clienteId);
         }
 
-        public void CrearConsulta(string clienteId, string doctorId, DateTime fecha, string direccion)
+        public async Task CrearConsulta(string clienteId, string doctorId, DateTime fecha, string direccion)
         {
             //Todo: Validaciones
             //Responsabilidad de Entidad: Conservar estado valido de la entidad, Estado = contenido de entidad
@@ -63,18 +63,18 @@ namespace Consultorio.Aplicacion.Servicios
             if(!Disponibilidad(clienteId, doctorId, fecha))
                 throw new InvalidOperationException("Ya existe una cita previa");
 
-            var consulta = new Consulta(cliente, doctor, fecha, direccion);
+            var consulta = new Consulta(await cliente, await doctor, fecha, direccion);
 
             _consultaRepo.Save(consulta);
 
-            _consultaRepo.AcceptChanges();
+            await _consultaRepo.AcceptChanges();
 
         }
 
         private bool Disponibilidad(string clienteId, string doctorId, DateTime fecha)
         {
-            var citaCliente = _consultaRepo.GetCustormerDates(clienteId, fecha);
-            var citaDoctor = _consultaRepo.GetDoctorDates(doctorId, fecha);
+            List<Consulta> citaCliente = _consultaRepo.GetCustormerDates(clienteId, fecha).Result; //Checar si es lo correcto con ivan
+            List<Consulta> citaDoctor = _consultaRepo.GetDoctorDates(doctorId, fecha).Result; //Checar si es lo correcto con ivan
 
             if (citaCliente.Count() > 0 || citaDoctor.Count() > 0)
                 return false;
