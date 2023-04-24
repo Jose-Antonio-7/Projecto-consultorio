@@ -34,9 +34,9 @@ namespace Consultorio.Aplicacion.Servicios
 
         }
 
-        public List<Cliente> ConsultarTodos()
+        public async Task<List<Cliente>> ConsultarTodos()
         {
-            return _repo.GetAll();
+            return await _repo.GetAll();
         }
 
         public Cliente ConsultarCliente(string id)

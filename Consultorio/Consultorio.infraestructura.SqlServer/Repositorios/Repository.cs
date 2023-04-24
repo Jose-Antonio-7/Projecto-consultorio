@@ -24,9 +24,9 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
             _context.SaveChanges();
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return await _context.Set<T>().ToListAsync();
         }
 
         public T GetById(string id)

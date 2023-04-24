@@ -11,7 +11,7 @@ namespace Consultorio.Dominio.Repositorios
 
         void Save(TEntity entity);
 
-        List<TEntity> GetAll();
+        Task<List<TEntity>> GetAll();
 
         void AcceptChanges();
 

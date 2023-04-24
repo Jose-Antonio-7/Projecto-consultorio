@@ -25,9 +25,25 @@ namespace Consultorio.Api.Controllers
 
         [HttpGet]
         [Authorize]
+<<<<<<< HEAD
         public ActionResult <List<Cliente>> ConsultarClientes()
         {            
             return _clienteService.ConsultarTodos();
+=======
+        public async Task<ActionResult<List<Cliente>>> ConsultarClientes()
+        {
+            //var servicio = new ClienteService(_context);
+            try
+            {
+                return Ok( await _clienteService.ConsultarTodos());
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
+
+            //return _clienteService.ConsultarTodos();
+>>>>>>> feeb84e0ffcc01ffca99442cd000692956e7e6e7
         }
 
         [HttpPost]
