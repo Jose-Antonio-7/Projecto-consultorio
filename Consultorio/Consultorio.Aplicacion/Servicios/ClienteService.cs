@@ -27,10 +27,10 @@ namespace Consultorio.Aplicacion.Servicios
             //_repo = new ClienteRepository(_context);
         }
 
-        public void Almacenar(Cliente cliente)
+        public async Task Almacenar(Cliente cliente)
         {
             _repo.Save(cliente);
-            _repo.AcceptChanges();
+            await _repo.AcceptChanges();
 
         }
 
@@ -39,9 +39,9 @@ namespace Consultorio.Aplicacion.Servicios
             return await _repo.GetAll();
         }
 
-        public Cliente ConsultarCliente(string id)
+        public async Task<Cliente> ConsultarCliente(string id)
         {
-            return _repo.GetById(id);
+            return await _repo.GetById(id);
         }
 
     }

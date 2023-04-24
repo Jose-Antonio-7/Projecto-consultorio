@@ -24,11 +24,11 @@ namespace Consultorio.Api.Controllers
         }
 
         [HttpPost("login")]
-        public ActionResult Login([FromBody] UserAuth user)
+        public async Task<ActionResult> Login([FromBody] UserAuth user)
         {
             var Login = user.Login;
             var Contraseña = user.Contraseña;
-            User usuarioConsultado = _userServices.ConsultarUser(Login);
+            User usuarioConsultado = await _userServices.ConsultarUser(Login);
 
 
             if (user == null || usuarioConsultado == null)
@@ -65,6 +65,6 @@ namespace Consultorio.Api.Controllers
             return Unauthorized();
 
         }
-       
+
     }
 }

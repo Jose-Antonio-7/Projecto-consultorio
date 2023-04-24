@@ -1,6 +1,7 @@
 ﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Contextos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,10 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
 
 
 
-        public User GetClientesByLogin(string login)
+        public async Task<User> GetClientesByLogin(string login)
         {
-            var usuario = _context.Users.Where(c => c.Login == login).FirstOrDefault();
-            return usuario;
+            var usuario = _context.Users.Where(c => c.Login == login).FirstOrDefaultAsync();
+            return await usuario;
         }
     }
 }

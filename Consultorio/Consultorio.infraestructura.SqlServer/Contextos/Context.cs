@@ -34,21 +34,21 @@ namespace Consultorio.infraestructura.SqlServer.Contextos
 
         public DbSet<User> Users { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder model)
-        {
-            model.Entity<Cliente>()
-                .ToTable("Clientes")
-                .HasKey(e=>e.Id);
+        //protected override void OnModelCreating(ModelBuilder model)
+        //{
+        //    model.Entity<Cliente>()
+        //        .ToTable("Clientes")
+        //        .HasKey(e=>e.Id);
 
-            model.Entity<Cliente>()
-                .Property(e => e.Nombre)
-                .HasColumnName("NombreCliente")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(30)
-                .HasDefaultValue("Sin nombre")
-                .IsRequired();
+        //    model.Entity<Cliente>()
+        //        .Property(e => e.Nombre)
+        //        .HasColumnName("NombreCliente")
+        //        .HasColumnType("nvarchar")
+        //        .HasMaxLength(30)
+        //        .HasDefaultValue("Sin nombre")
+        //        .IsRequired();
 
-        }
+        //}
 
         //public DbSet<Doctor> Doctoresprueba { get; set; }
 

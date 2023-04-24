@@ -1,6 +1,7 @@
 ﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Contextos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,24 +18,24 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
             _context = context;
         }
 
-        public List<Consulta> GetCustormerAllDates(string clienteId)
+        public async Task<List<Consulta>> GetCustormerAllDates(string clienteId)
         {
-            var citas = _context.Consultas.Where(c => c.ClienteId == clienteId).ToList();
-            return citas;
+            var citas = _context.Consultas.Where(c => c.ClienteId == clienteId).ToListAsync();
+            return await citas;
         }
 
-        public List<Consulta> GetCustormerDates(string clienteId, DateTime fecha)
+        public async Task<List<Consulta>> GetCustormerDates(string clienteId, DateTime fecha)
         {
             var citas = _context.Consultas.Where(c => c.ClienteId == clienteId
-            && c.FechaConsulta.Date == fecha.Date).ToList();
-            return citas;
+            && c.FechaConsulta.Date == fecha.Date).ToListAsync();
+            return await citas;
         }
 
-        public List<Consulta> GetDoctorDates(string doctorId, DateTime fecha)
+        public async Task<List<Consulta>> GetDoctorDates(string doctorId, DateTime fecha)
         {
             var citas = _context.Consultas.Where(c => c.DoctorId == doctorId 
-            && c.FechaConsulta.Date == fecha.Date).ToList();
-            return citas;
+            && c.FechaConsulta.Date == fecha.Date).ToListAsync();
+            return await citas;
         }
     }
 }
