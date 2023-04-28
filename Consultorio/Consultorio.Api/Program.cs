@@ -1,7 +1,10 @@
 using Consultorio.Aplicacion.Servicios;
 using Consultorio.Dominio.Repositorios;
+using Consultorio.infraestructura.MongoDB.Context;
+using Consultorio.infraestructura.MongoDB.Services;
 using Consultorio.infraestructura.SqlServer.Contextos;
-using Consultorio.infraestructura.SqlServer.Repositorios;
+using Consultorio.infraestructura.MongoDB.Repositorios;
+//using Consultorio.infraestructura.SqlServer.Repositorios;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -23,7 +26,12 @@ namespace Consultorio.Api
 
             // Add services to the container.
 
-            
+            //Infraestructura MongoDB
+            builder.Services.Configure<MongoDBDatabaseSettings>(
+                builder.Configuration.GetSection("MongoDBDatabase"));
+
+            builder.Services.AddSingleton<ClienteRepository>();
+
 
 
             //Seguridad
@@ -93,20 +101,28 @@ namespace Consultorio.Api
             builder.Services.AddDbContext<Context>(opt => opt.UseSqlServer(conectionString));
 
             builder.Services.AddScoped<ClienteService>();
-            builder.Services.AddScoped<ConsultasServices>();
-            builder.Services.AddScoped<UserService>();
+            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            //builder.Services.AddScoped<ConsultasServices>();
+            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            //builder.Services.AddScoped<UserService>();
 
             //Agregado por mi para inyecccion de dependencias
-            builder.Services.AddScoped<DoctorService>();
+            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            //builder.Services.AddScoped<DoctorService>();
 
 
             builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
+
+
             //Agregado por mi para inyecccion de dependencias
-            builder.Services.AddScoped<IConsultasRepository, ConsultasRepository>();
+            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            //builder.Services.AddScoped<IConsultasRepository, ConsultasRepository>();
             //builder.Services.AddScoped < IConsultasRepository, ConsultasRepository, IClienteRepository ClienteRepository, IRepositoryDoctor DoctorRepository > ();
-            builder.Services.AddScoped<IRepositoryDoctor, DoctorRepository>();
-            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            //builder.Services.AddScoped<IRepositoryDoctor, DoctorRepository>();
+            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            //builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Consultorio.Dominio\Consultorio.Dominio.csproj" />
+    <ProjectReference Include="..\Consultorio.infraestructura.MongoDB\Consultorio.infraestructura.MongoDB.csproj" />
     <ProjectReference Include="..\Consultorio.infraestructura.SqlServer\Consultorio.infraestructura.SqlServer.csproj" />
     <ProjectReference Include="..\Consultorio.Infraestructura.TextFile\Consultorio.Infraestructura.TextFile.csproj" />
   </ItemGroup>
