@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Consultorio.infraestructura.MongoDB.Repositorios
 {
-    public class Repository : IRepository<Cliente> 
+    public class Repository : IRepository<Dominio.Entidades.Cliente> 
     {
 
         private readonly MongoContext _mongoContext;
@@ -26,17 +26,17 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
             throw new NotImplementedException();
         }
 
-        public async Task<List<Cliente>> GetAll()
+        public async Task<List<Dominio.Entidades.Cliente>> GetAll()
         {
             return await _mongoContext.Cliente.Find(_ => true).ToListAsync();
         }
 
-        public Task<Cliente> GetById(string id)
+        public Task<Dominio.Entidades.Cliente> GetById(string id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task Save(Cliente entity)
+        public async Task Save(Dominio.Entidades.Cliente entity)
         {
             await _mongoContext.Cliente.InsertOneAsync(entity);
         }

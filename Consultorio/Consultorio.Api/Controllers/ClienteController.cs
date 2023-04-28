@@ -29,15 +29,17 @@ namespace Consultorio.Api.Controllers
         //[Authorize] descomentar despues
         public async Task<ActionResult<List<Cliente>>> ConsultarClientes()
         {
-            try
-            {
-                return Ok(await _clienteService.ConsultarTodos());
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message, ex);
-                return StatusCode(500, "Internal Server Error");
-            }
+            return Ok(await _clienteService.ConsultarTodos());
+
+            //try
+            //{
+            //    return Ok(await _clienteService.ConsultarTodos());
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex.Message, ex);
+            //    return StatusCode(500, "Internal Server Error");
+            //}
 
         }
 

@@ -25,11 +25,11 @@ namespace Consultorio.infraestructura.MongoDB.Context
             database = mongoClient.GetDatabase(Configuration["MongoDBDatabase:DatabaseName"]);
         }
 
-        public IMongoCollection<Cliente> Cliente
+        public IMongoCollection<Dominio.Entidades.Cliente> Cliente
         {
             get
             {
-                return database.GetCollection<Cliente>("Clientes");
+                return database.GetCollection<Dominio.Entidades.Cliente>("Clientes");
             }
         }
     }

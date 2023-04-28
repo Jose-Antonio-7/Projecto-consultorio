@@ -37,11 +37,11 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
 
         public async Task<List<Consultorio.Dominio.Entidades.Cliente>> GetAll()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
 
             //var resultado = await _mongoContext.Cliente.Find(_ => true).ToListAsync();
             //var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
-            //return await _mongoContext.Cliente.Find(_ => true).ToListAsync();
+            return await _mongoContext.Cliente.Find(_ => true).ToListAsync();
         }
 
         //public async Task<List<Cliente>> GetAsync() =>
@@ -50,11 +50,11 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
         public async Task<Consultorio.Dominio.Entidades.Cliente> GetById(/*ObjectId*/ string id)
         {
             var resultado = await _mongoContext.Cliente.Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
-            var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
-            return cliente;
+            //var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
+            return resultado;
         }
 
-        public async Task Save(Cliente cliente)
+        public async Task Save(Dominio.Entidades.Cliente cliente)
         {
             await _mongoContext.Cliente.InsertOneAsync(cliente);
         }
@@ -74,10 +74,10 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
             throw new NotImplementedException();
         }
 
-        public async Task Save(Dominio.Entidades.Cliente entity)
-        {
-            var cliente = new Cliente(entity.Nombre, entity.Apellido, entity.Edad, entity.Direccion, entity.Telefono);
-            await _mongoContext.Cliente.InsertOneAsync(cliente);
-        }
+        //public async Task Save(Dominio.Entidades.Cliente entity)
+        //{
+        //    var cliente = new Cliente(entity.Nombre, entity.Apellido, entity.Edad, entity.Direccion, entity.Telefono);
+        //    await _mongoContext.Cliente.InsertOneAsync(cliente);
+        //}
     }
 }
