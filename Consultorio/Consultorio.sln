@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consultorio.Aplicacion", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consultorio.Infraestructura.TextFile", "Consultorio.Infraestructura.TextFile\Consultorio.Infraestructura.TextFile.csproj", "{7FE38DD9-D5EB-4FE6-A629-598B7B423483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultorio.Api", "Consultorio.Api\Consultorio.Api.csproj", "{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consultorio.Api", "Consultorio.Api\Consultorio.Api.csproj", "{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultorio.infraestructura.MongoDB", "Consultorio.infraestructura.MongoDB\Consultorio.infraestructura.MongoDB.csproj", "{E012D9F1-D28F-4F1E-A351-0C8312D2484A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
