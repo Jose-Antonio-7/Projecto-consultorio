@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Consultorio.infraestructura.MongoDB.Context
 {
-    public class MongoDBDatabaseSettings
+    public class IMongoDBDatabaseSettings
     {
         public string ConnectionString { get; set; } = null!;
 
@@ -20,5 +20,11 @@ namespace Consultorio.infraestructura.MongoDB.Context
 
         //public string ConsultasCollectionName { get; set; } = null!;
 
+    }
+
+    public class MongoDBDatabaseSettings : IMongoDBDatabaseSettings
+    {
+        public string DatabaseName { get; set; }
+        public string ConnectionString { get; set; }
     }
 }

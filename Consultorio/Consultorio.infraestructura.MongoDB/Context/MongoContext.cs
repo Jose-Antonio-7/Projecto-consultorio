@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using Consultorio.infraestructura.MongoDB.Models;
-//using Consultorio.Dominio.Entidades;
+//using Consultorio.infraestructura.MongoDB.Models;
+using Consultorio.Dominio.Entidades;
 
 namespace Consultorio.infraestructura.MongoDB.Context
 {
@@ -25,11 +25,18 @@ namespace Consultorio.infraestructura.MongoDB.Context
             database = mongoClient.GetDatabase(Configuration["MongoDBDatabase:DatabaseName"]);
         }
 
-        public IMongoCollection<Dominio.Entidades.Cliente> Cliente
+        public IMongoCollection<Cliente> Cliente
         {
             get
             {
-                return database.GetCollection<Dominio.Entidades.Cliente>("Clientes");
+                return database.GetCollection<Cliente>("Clientes");
+            }
+        }
+        public IMongoCollection<User> User
+        {
+            get
+            {
+                return database.GetCollection<User>("Users");
             }
         }
     }

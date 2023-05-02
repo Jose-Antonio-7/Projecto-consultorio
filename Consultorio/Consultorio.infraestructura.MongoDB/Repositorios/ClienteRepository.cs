@@ -1,7 +1,6 @@
-﻿//using Consultorio.Dominio.Entidades;
+﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.MongoDB.Context;
-using Consultorio.infraestructura.MongoDB.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -21,21 +20,8 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
         {
             _mongoContext = new MongoContext();
         }
-        //private readonly IMongoCollection<Cliente> _clientesCollection;
 
-        //public ClienteRepository(
-        //IOptions<MongoDBDatabaseSettings> mongoDBDatabaseSettings)
-        //{
-        //    var mongoClient = new MongoClient(
-        //        mongoDBDatabaseSettings.Value.ConnectionString);
-
-        //    var mongoDatabase = mongoClient.GetDatabase(
-        //        mongoDBDatabaseSettings.Value.DatabaseName);
-
-        //    _clientesCollection = mongoDatabase.GetCollection<Cliente>("Clientes");
-        //}
-
-        public async Task<List<Consultorio.Dominio.Entidades.Cliente>> GetAll()
+        public async Task<List<Cliente>> GetAll()
         {
             //throw new NotImplementedException();
 
@@ -47,14 +33,14 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
         //public async Task<List<Cliente>> GetAsync() =>
         //await _mongoContext.Cliente.Find(_ => true).ToListAsync();
 
-        public async Task<Consultorio.Dominio.Entidades.Cliente> GetById(/*ObjectId*/ string id)
+        public async Task<Cliente> GetById(/*ObjectId*/ string id)
         {
             var resultado = await _mongoContext.Cliente.Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
             //var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
             return resultado;
         }
 
-        public async Task Save(Dominio.Entidades.Cliente cliente)
+        public async Task Save(Cliente cliente)
         {
             await _mongoContext.Cliente.InsertOneAsync(cliente);
         }
@@ -69,7 +55,7 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
 
         }
 
-        Task<List<Dominio.Entidades.Cliente>> IClienteRepository.GetClientesByAge(int age)
+        Task<List<Cliente>> IClienteRepository.GetClientesByAge(int age)
         {
             throw new NotImplementedException();
         }

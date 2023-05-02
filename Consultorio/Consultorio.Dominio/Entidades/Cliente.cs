@@ -25,32 +25,5 @@ namespace Consultorio.Dominio.Entidades
             return $"{Id},{Nombre}, {Apellido}, {Edad}, {Direccion}, {Telefono}";
         }
 
-        //private string ValidarTelefono(string telefono)
-        //{
-        //    //ToDo: Validar que solo tenga letras
-        //    if(!IsDigitsOnly(telefono) || telefono.Length!=10)
-        //        throw new ArgumentException($"El valor del tipo {nameof(telefono)} no es valido", nameof(telefono));
-
-        //    return telefono;
-        //}
-        //bool IsDigitsOnly(string str)
-        //{
-        //    foreach (char c in str)
-        //    {
-        //        if (c < '0' || c > '9')
-        //            return false;
-        //    }
-
-        //    return true;
-        //}
-        //private string ValidarDireccion(string direccion)
-        //{
-        //    //ToDo: Validar que solo tenga letras
-        //    if (string.IsNullOrWhiteSpace(direccion) || direccion.Length <= 50 || direccion.Length >= 4)
-        //        throw new ArgumentException($"El valor del tipo {nameof(direccion)} no es valido", nameof(direccion));
-
-        //    return direccion;
-        //}
-
     }
 }
