@@ -30,7 +30,7 @@ namespace Consultorio.Api.Controllers
         }
 
         [HttpPost]
-        [Authorize] //comentar para que funcione crear en el login
+        /*[Authorize]*/ //comentar para que funcione crear en el login
         public async Task<ActionResult> CrearUser(User user)
         {
             await _usersService.Almacenar(user);

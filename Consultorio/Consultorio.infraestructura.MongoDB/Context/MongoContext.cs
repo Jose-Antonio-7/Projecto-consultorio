@@ -14,8 +14,8 @@ namespace Consultorio.infraestructura.MongoDB.Context
     public class MongoContext
     {
 
-        private readonly MongoClient mongoClient;
-        private readonly IMongoDatabase database;
+        /*private*/ public readonly MongoClient mongoClient;
+        /*private*/ public readonly IMongoDatabase database;
         public IConfigurationRoot Configuration { get; }
 
         public MongoContext()
@@ -25,19 +25,20 @@ namespace Consultorio.infraestructura.MongoDB.Context
             database = mongoClient.GetDatabase(Configuration["MongoDBDatabase:DatabaseName"]);
         }
 
-        public IMongoCollection<Cliente> Cliente
-        {
-            get
-            {
-                return database.GetCollection<Cliente>("Clientes");
-            }
-        }
-        public IMongoCollection<User> User
-        {
-            get
-            {
-                return database.GetCollection<User>("Users");
-            }
-        }
+
+        //public IMongoCollection<Cliente> Cliente
+        //{
+        //    get
+        //    {
+        //        return database.GetCollection<Cliente>("Clientes");
+        //    }
+        //}
+        //public IMongoCollection<User> User
+        //{
+        //    get
+        //    {
+        //        return database.GetCollection<User>("Users");
+        //    }
+        //}
     }
 }

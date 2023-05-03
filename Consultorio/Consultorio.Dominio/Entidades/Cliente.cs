@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Consultorio.Dominio.Entidades
 {
+    [BsonCollection("Clientes")]
     public class Cliente : Persona
     {
         public int Edad { get; private set; }

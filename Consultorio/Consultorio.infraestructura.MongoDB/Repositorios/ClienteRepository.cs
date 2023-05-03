@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Consultorio.infraestructura.MongoDB.Repositorios
 {
-    public class ClienteRepository :  IClienteRepository
+    public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
         private readonly MongoContext _mongoContext;
 
@@ -21,39 +21,39 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
             _mongoContext = new MongoContext();
         }
 
-        public async Task<List<Cliente>> GetAll()
-        {
-            //throw new NotImplementedException();
+        //public async Task<List<Cliente>> GetAll()
+        //{
+        //    //throw new NotImplementedException();
 
-            //var resultado = await _mongoContext.Cliente.Find(_ => true).ToListAsync();
-            //var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
-            return await _mongoContext.Cliente.Find(_ => true).ToListAsync();
-        }
+        //    //var resultado = await _mongoContext.Cliente.Find(_ => true).ToListAsync();
+        //    //var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
+        //    return await _mongoContext.Cliente.Find(_ => true).ToListAsync();
+        //}
 
         //public async Task<List<Cliente>> GetAsync() =>
         //await _mongoContext.Cliente.Find(_ => true).ToListAsync();
 
-        public async Task<Cliente> GetById(/*ObjectId*/ string id)
-        {
-            var resultado = await _mongoContext.Cliente.Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
-            //var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
-            return resultado;
-        }
+        //public async Task<Cliente> GetById(/*ObjectId*/ string id)
+        //{
+        //    var resultado = await _mongoContext.Cliente.Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+        //    //var cliente = new Consultorio.Dominio.Entidades.Cliente(resultado.NombreCliente, resultado.ApellidoCliente, resultado.Edad, resultado.DireccionCliente, resultado.TelefonoCliente);
+        //    return resultado;
+        //}
 
-        public async Task Save(Cliente cliente)
-        {
-            await _mongoContext.Cliente.InsertOneAsync(cliente);
-        }
-        public Task<List<Cliente>> GetClientesByAge(int age)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task Save(Cliente cliente)
+        //{
+        //    await _mongoContext.Cliente.InsertOneAsync(cliente);
+        //}
+        //public Task<List<Cliente>> GetClientesByAge(int age)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task AcceptChanges()
-        {
-            throw new NotImplementedException();
+        //public Task AcceptChanges()
+        //{
+        //    throw new NotImplementedException();
 
-        }
+        //}
 
         Task<List<Cliente>> IClienteRepository.GetClientesByAge(int age)
         {

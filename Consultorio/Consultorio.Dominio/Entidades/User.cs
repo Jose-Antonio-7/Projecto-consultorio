@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Consultorio.Dominio.Entidades
 {
+    [BsonCollection("Users")]
     public class User : Entity
     {
         //public string Id { get; private set; }

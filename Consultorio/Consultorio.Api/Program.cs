@@ -1,7 +1,6 @@
 using Consultorio.Aplicacion.Servicios;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.MongoDB.Context;
-using Consultorio.infraestructura.MongoDB.Services;
 using Consultorio.infraestructura.SqlServer.Contextos;
 using Consultorio.infraestructura.MongoDB.Repositorios;
 //using Consultorio.infraestructura.SqlServer.Repositorios;
@@ -14,7 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Text;
-
+using Microsoft.Extensions.Options;
 
 namespace Consultorio.Api
 {
@@ -30,7 +29,13 @@ namespace Consultorio.Api
             builder.Services.Configure<MongoDBDatabaseSettings>(
                 builder.Configuration.GetSection("MongoDBDatabase"));
 
-            builder.Services.AddSingleton<ClienteRepository>();
+            builder.Services.AddSingleton<MongoDBDatabaseSettings>(serviceProvider =>
+                serviceProvider.GetRequiredService<IOptions<MongoDBDatabaseSettings>>().Value);
+
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+
+            //builder.Services.AddSingleton<ClienteRepository>();
 
 
 
@@ -104,7 +109,7 @@ namespace Consultorio.Api
             //Agregar estos de abajo una vez esten en infraestructura mongodb
             //builder.Services.AddScoped<ConsultasServices>();
             //Agregar estos de abajo una vez esten en infraestructura mongodb
-            //builder.Services.AddScoped<UserService>();
+            builder.Services.AddScoped<UserService>();
 
             //Agregado por mi para inyecccion de dependencias
             //Agregar estos de abajo una vez esten en infraestructura mongodb
@@ -113,8 +118,6 @@ namespace Consultorio.Api
 
             builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
-
-
             //Agregado por mi para inyecccion de dependencias
             //Agregar estos de abajo una vez esten en infraestructura mongodb
             //builder.Services.AddScoped<IConsultasRepository, ConsultasRepository>();
@@ -122,7 +125,7 @@ namespace Consultorio.Api
             //Agregar estos de abajo una vez esten en infraestructura mongodb
             //builder.Services.AddScoped<IRepositoryDoctor, DoctorRepository>();
             //Agregar estos de abajo una vez esten en infraestructura mongodb
-            //builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 
