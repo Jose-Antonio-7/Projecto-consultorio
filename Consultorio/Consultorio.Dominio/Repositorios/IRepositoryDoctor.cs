@@ -8,7 +8,7 @@ namespace Consultorio.Dominio.Repositorios
 {
     public interface IRepositoryDoctor : IRepository<Doctor>
     {
-        Task<List<Doctor>> GetDoctorByCedula(string cedula);
+        Task<Doctor> GetDoctorByCedula(string cedula);
 
     }
 }

@@ -26,7 +26,7 @@ namespace Consultorio.Api.Controllers
         }
 
         [HttpGet]
-        //[Authorize] //descomentar despues
+        [Authorize] //descomentar despues
         public async Task<ActionResult<List<Cliente>>> ConsultarClientes()
         {
             try

@@ -5,6 +5,8 @@
 //using Consultorio.Aplicacion.Servicios;
 
 using Consultorio.Dominio.Entidades;
+using Consultorio.Presentacion.Modelos;
+using Consultorio.Presentacion.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,17 +21,21 @@ namespace Consultorio.Presentacion.Formularios
 {
     public partial class FrmDoctores : Form
     {
-        public FrmDoctores()
+        private AuthContext _authContext;
+
+        public FrmDoctores(AuthContext authContext)
         {
             InitializeComponent();
+            _authContext = authContext;
         }
         List<Doctor> doctorList = new List<Doctor>();
 
-        private void btnConfirmarDoctor_Click(object sender, EventArgs e)
+        private async void btnConfirmarDoctor_Click(object sender, EventArgs e)
         {
             //Agregar try catch
             try
             {
+                btnConfirmarDoctor.Enabled = false;
                 GuardarDoctor(
                     tbNombreDoctor.Text,
                     tbApellidoDoctor.Text,
@@ -41,65 +47,43 @@ namespace Consultorio.Presentacion.Formularios
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                btnConfirmarDoctor.Enabled = true;
+            }
         }
 
-        private void GuardarDoctor(string nombre, string apellido, string cedula, string telefono)
+        private async Task GuardarDoctor(string nombre, string apellido, string cedula, string telefono)
         {
-            if (string.IsNullOrWhiteSpace(nombre))
-            {
-                throw new ArgumentException("Los valores no son validos", "Nombre:");
-            }
-            if (string.IsNullOrWhiteSpace(apellido))
-            {
-                throw new ArgumentException("Los valores no son validos", "Apellido:");
-            }
-            if (string.IsNullOrWhiteSpace(cedula))
-            {
-                throw new ArgumentException("Los valores no son validos", "Direccion:");
-            }
-            if (string.IsNullOrWhiteSpace(telefono))
-            {
-                throw new ArgumentException("Los valores no son validos", "Telefono:");
-            }
-
             var doctor = new Doctor(nombre, apellido, cedula, telefono);
 
-            //var doctorService = new DoctorService();
+            var doctorService = new DoctorService(_authContext);
 
-            //doctorService.Almacenar(doctor);
+            await doctorService.Almacenar(doctor);
 
-            //dtgDoctores.DataSource = doctorService.ConsultarTodos();
-            
+            dtgDoctores.DataSource = await doctorService.ConsultarTodos();
+
         }
-
-        //private void AlmacenarBD(Doctor doctor)
-        //{
-        //    var context = new ContextoSQLite();
-
-        //    context.Doctores.Add(doctor);
-
-        //    context.SaveChanges();
-
-        //    List<Doctor> Doctores = context.Doctores.ToList();
-
-        //    dtgDoctores.DataSource = Doctores;
-        //}
 
         private void AlmacenarTxt(Doctor doctor)
         {
-            //StreamWriter writer = new StreamWriter("C:\\Users\\Antonio\\Desktop\\Programas mios\\C#\\DoctoresCore.txt", true);
-
-            //var datos = doctor;
-            //writer.Write(datos);
-            //writer.Close();
-            //writer.Dispose();
         }
 
-        private void FrmDoctores_Load(object sender, EventArgs e)
+        private async void FrmDoctores_Load(object sender, EventArgs e)
         {
-            //var doctorService = new DoctorService();
-            //dtgDoctores.DataSource = doctorService.ConsultarTodos();
+            try
+            {
+                var doctorService = new DoctorService(_authContext);
 
+                btnConfirmarDoctor.Enabled = false;
+
+                dtgDoctores.DataSource = await doctorService.ConsultarTodos();
+
+            }
+            finally
+            {
+                btnConfirmarDoctor.Enabled = true;
+            }
         }
     }
 }

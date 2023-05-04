@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Consultorio.Dominio.Entidades
 {
+    [BsonCollection("Doctores")]
     public class Doctor : Persona 
     {
         //public string Nombre { get; set; }

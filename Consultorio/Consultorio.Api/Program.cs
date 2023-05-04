@@ -101,33 +101,19 @@ namespace Consultorio.Api
             builder.Services.AddHealthChecksUI().AddInMemoryStorage();
 
 
-
             var conectionString = builder.Configuration.GetConnectionString("SQLServer");
             builder.Services.AddDbContext<Context>(opt => opt.UseSqlServer(conectionString));
 
             builder.Services.AddScoped<ClienteService>();
-            //Agregar estos de abajo una vez esten en infraestructura mongodb
-            //builder.Services.AddScoped<ConsultasServices>();
-            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            builder.Services.AddScoped<ConsultasServices>();
             builder.Services.AddScoped<UserService>();
-
-            //Agregado por mi para inyecccion de dependencias
-            //Agregar estos de abajo una vez esten en infraestructura mongodb
-            //builder.Services.AddScoped<DoctorService>();
-
+            builder.Services.AddScoped<DoctorService>();
 
             builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
-
-            //Agregado por mi para inyecccion de dependencias
-            //Agregar estos de abajo una vez esten en infraestructura mongodb
-            //builder.Services.AddScoped<IConsultasRepository, ConsultasRepository>();
-            //builder.Services.AddScoped < IConsultasRepository, ConsultasRepository, IClienteRepository ClienteRepository, IRepositoryDoctor DoctorRepository > ();
-            //Agregar estos de abajo una vez esten en infraestructura mongodb
-            //builder.Services.AddScoped<IRepositoryDoctor, DoctorRepository>();
-            //Agregar estos de abajo una vez esten en infraestructura mongodb
+            builder.Services.AddScoped<IConsultasRepository, ConsultasRepository>();
+            builder.Services.AddScoped<IRepositoryDoctor, DoctorRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
-
-
+            //builder.Services.AddScoped < IConsultasRepository, ConsultasRepository, IClienteRepository ClienteRepository, IRepositoryDoctor DoctorRepository > ();
 
 
             builder.Services.AddControllers();
@@ -178,28 +164,17 @@ namespace Consultorio.Api
             // Configure the HTTP request pipeline.
 
             if (app.Environment.IsDevelopment())
-
             {
-
                 app.UseSwagger();
 
                 //app.UseSwaggerUI();
 
                 app.UseSwaggerUI(options => {
-
                     options.SwaggerEndpoint("/swagger/V1/swagger.json", "Product WebAPI");
-
                 });
 
             }
 
-
-
-
-
-
-
-            //var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -210,7 +185,6 @@ namespace Consultorio.Api
 
             //mapeo de endpoint en el archivo
             
-
             app.UseHttpsRedirection();
 
             app.UseAuthentication();

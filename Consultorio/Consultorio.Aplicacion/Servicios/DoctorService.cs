@@ -1,4 +1,4 @@
-﻿using Consultorio.Dominio.Entidades;
+﻿﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.SqlServer.Repositorios;
 //using Consultorio.Infraestructura.TextFile.Repositorios;
@@ -17,11 +17,11 @@ namespace Consultorio.Aplicacion.Servicios
         private readonly Context _context;
 
 
-        public DoctorService(Context context)
+        public DoctorService(Context context, IRepositoryDoctor repo)
         {
             _context = context;
 
-            _repo = new DoctorRepository(_context);
+            _repo = repo;
         }
 
         public async Task Almacenar(Doctor doctor)
@@ -31,7 +31,6 @@ namespace Consultorio.Aplicacion.Servicios
 
 
         }
-
         public async Task<List<Doctor>> ConsultarTodos()
         {
             return await _repo.GetAll(); //corregir despues para hacerlo async

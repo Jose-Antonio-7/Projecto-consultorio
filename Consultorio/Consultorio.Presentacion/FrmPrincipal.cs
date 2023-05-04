@@ -23,7 +23,7 @@ namespace Consultorio.Presentacion
 
         private void btnDoctores_Click(object sender, EventArgs e)
         {
-            var frmDoctores = new FrmDoctores();
+            var frmDoctores = new FrmDoctores(_authContext);
 
             frmDoctores.ShowDialog();
         }

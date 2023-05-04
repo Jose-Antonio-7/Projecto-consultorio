@@ -23,7 +23,7 @@ namespace Consultorio.infraestructura.SqlServer.Repositorios
         //    return _context.Doctores.ToList();
         //}
 
-        public async Task<List<Doctor>> GetDoctorByCedula(string cedula)
+        public async Task<Doctor> GetDoctorByCedula(string cedula)
         {
             throw new NotImplementedException();
         }

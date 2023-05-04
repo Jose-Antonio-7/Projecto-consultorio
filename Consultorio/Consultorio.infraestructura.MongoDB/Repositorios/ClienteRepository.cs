@@ -21,6 +21,11 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
             _mongoContext = new MongoContext();
         }
 
+        Task<List<Cliente>> IClienteRepository.GetClientesByAge(int age)
+        {
+            throw new NotImplementedException();
+        }
+
         //public async Task<List<Cliente>> GetAll()
         //{
         //    //throw new NotImplementedException();
@@ -48,17 +53,6 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
         //{
         //    throw new NotImplementedException();
         //}
-
-        //public Task AcceptChanges()
-        //{
-        //    throw new NotImplementedException();
-
-        //}
-
-        Task<List<Cliente>> IClienteRepository.GetClientesByAge(int age)
-        {
-            throw new NotImplementedException();
-        }
 
         //public async Task Save(Dominio.Entidades.Cliente entity)
         //{
