@@ -1630,6 +1630,9 @@
         }
       },
       "Consultorio.Dominio/1.0.0": {
+        "dependencies": {
+          "MongoDB.Bson": "2.19.1"
+        },
         "runtime": {
           "Consultorio.Dominio.dll": {}
         }

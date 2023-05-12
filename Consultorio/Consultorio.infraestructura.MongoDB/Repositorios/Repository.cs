@@ -1,6 +1,8 @@
 ﻿using Consultorio.Dominio.Entidades;
 using Consultorio.Dominio.Repositorios;
 using Consultorio.infraestructura.MongoDB.Context;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -48,6 +50,18 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
 
         public async Task Save(T entity)
         {
+            //if (entity.GetType() == typeof(Consulta))
+            if (entity is Consulta consulta)
+            {
+                //BsonSerializer.Serialize(DateTime);
+                //var bsonDateTime = consulta.FechaConsulta.GetValue("timestamp").AsBsonDateTime;
+                BsonDateTime bsonDateTime = BsonDateTime.Create(consulta.FechaConsulta.ToUniversalTime());
+                consulta.FechaConsulta = bsonDateTime.AsDateTime;
+
+                var fechaIso8601 = consulta.FechaConsulta.ToString("o");
+                consulta.FechaConsulta = DateTime.Parse(fechaIso8601);
+            }
+
             await _collection.InsertOneAsync(entity);
         }
     }

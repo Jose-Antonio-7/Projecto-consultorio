@@ -41,7 +41,8 @@ namespace Consultorio.Aplicacion.Servicios
             return await _consultaRepo.GetCustormerAllDates(clienteId);
         }
 
-        public async Task CrearConsulta(string clienteId, string doctorId, DateTime fecha, string direccion)
+        public async Task CrearConsulta
+            (string clienteId, string doctorId, DateTime fecha, string direccion)
         {
             //Todo: Validaciones
             //Responsabilidad de Entidad: Conservar estado valido de la entidad, Estado = contenido de entidad
@@ -52,20 +53,22 @@ namespace Consultorio.Aplicacion.Servicios
             //Si existe una en mismo horario para doctor y cliente
             //Si el doctor y cliente es valido
 
-            var cliente = _clienteRepo.GetById(clienteId);
+            //Consultar con Ivan porque el wait debe ir aqui
+            var cliente = await _clienteRepo.GetById(clienteId);
             if (cliente is null)
                 throw new InvalidOperationException("El cliente no existe");
 
-            var doctor = _doctorRepo.GetById(doctorId);
+            //Consultar con Ivan porque el wait debe ir aqui
+            var doctor = await _doctorRepo.GetById(doctorId);
             if (doctor is null)
                 throw new InvalidOperationException("El doctor no existe");
 
             if(!Disponibilidad(clienteId, doctorId, fecha))
                 throw new InvalidOperationException("Ya existe una cita previa");
 
-            var consulta = new Consulta(await cliente, await doctor, fecha, direccion);
+            var consulta = new Consulta(/*await*/ cliente, /*await*/ doctor, fecha, direccion);
 
-            _consultaRepo.Save(consulta);
+            await _consultaRepo.Save(consulta);
 
             await _consultaRepo.AcceptChanges();
 

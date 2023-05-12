@@ -15,14 +15,14 @@ namespace Consultorio.Api.Controllers
     {
         private readonly Context _context;
         private readonly ClienteService _clienteService;
-        //private readonly ConsultasServices _consultasServices;
+        private readonly ConsultasServices _consultasServices;
         private readonly ILogger<ClienteController> _logger;
 
-        public ClienteController(Context context, ClienteService clienteService/*, ConsultasServices consultasServices */) //descomentar despues
+        public ClienteController(Context context, ClienteService clienteService, ConsultasServices consultasServices ) //descomentar despues
         {
             _context = context;
             _clienteService = clienteService;
-            //_consultasServices = consultasServices; descomentar despues
+            _consultasServices = consultasServices; 
         }
 
         [HttpGet]
@@ -57,30 +57,30 @@ namespace Consultorio.Api.Controllers
         }
 
         //descomentar despues
-        //[HttpGet("{id}/citas")]
+        [HttpGet("{id}/citas")]
         //[Authorize]
-        //public async Task<ActionResult<List<Consulta>>> ConsultarCitasCliente(string id)
-        //{
-        //    //var servicio = new ConsultasServices(_context);
+        public async Task<ActionResult<List<Consulta>>> ConsultarCitasCliente(string id)
+        {
+            //var servicio = new ConsultasServices(_context);
 
-        //    //var result = _consultasServices.CitasCliente(id);
+            //var result = _consultasServices.CitasCliente(id);
 
-        //    return Ok(await _consultasServices.CitasCliente(id));
-        //}
+            return Ok(await _consultasServices.CitasCliente(id));
+        }
 
         //descomentar despues
-        //[HttpPost("{id}/citas")]
+        [HttpPost("{id}/citas")]
         //[Authorize]
-        //public async Task<ActionResult<List<Consulta>>> AgendarCita([FromRoute] string id, [FromBody] CrearConsultaDto consulta)
-        //{
-        //    //var servicio = new ConsultasServices(_context);
+        public async Task<ActionResult<List<Consulta>>> AgendarCita([FromRoute] string id, [FromBody] CrearConsultaDto consulta)
+        {
+            //var servicio = new ConsultasServices(_context);
 
-        //    //_consultasServices.CrearConsulta(id, consulta.DoctorId, consulta.Fecha, consulta.Direccion);
+            //_consultasServices.CrearConsulta(id, consulta.DoctorId, consulta.Fecha, consulta.Direccion);
 
-        //    //Checar con ivan si es correcto que no haya nada en return debido a que es void implicito
-        //    await _consultasServices.CrearConsulta(id, consulta.DoctorId, consulta.Fecha, consulta.Direccion);
-        //    return Ok();
-        //}
+            //Checar con ivan si es correcto que no haya nada en return debido a que es void implicito
+            await _consultasServices.CrearConsulta(id, consulta.DoctorId, consulta.Fecha, consulta.Direccion);
+            return Ok();
+        }
 
     }
 }

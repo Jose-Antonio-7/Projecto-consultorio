@@ -1,18 +1,25 @@
 ﻿using Consultorio.Dominio.Helpers;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Consultorio.Dominio.Entidades
 {
+    [BsonCollection("Consultas")]
     public class Consulta:Entity
     {
+        //[BsonRepresentation(BsonType.DateTime)]
+        //[BsonElement]
+        ////[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        //[BsonSerializer(typeof(MyCustomDateTimeSerializer<DateTime>))]
         private DateTime _fechaConsulta;
 
         public DateTime FechaConsulta { 
             get
             {
-                return _fechaConsulta;
+                return _fechaConsulta; 
             }
             set
             { 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Consultorio.infraestructura.SqlServer.Repositorios
 {
-    public abstract class Repository<T> : IRepository<T> where T : Entity
+    public /*abstract*/ class Repository<T> : IRepository<T> where T : Entity //Checar esto
     {
         private readonly Context _context;
 

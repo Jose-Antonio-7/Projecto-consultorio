@@ -23,19 +23,20 @@ namespace Consultorio.infraestructura.MongoDB.Repositorios
 
         public async Task<List<Consulta>> GetCustormerAllDates(string clienteId)
         {
-            return await _collection.Find(c => c.ClienteId.Equals(clienteId)).ToListAsync();
+            return await _collection.Find(c => c.ClienteId.Equals(clienteId) && c.FechaConsulta.AddHours(1) > DateTime.Now).ToListAsync();
         }
 
         public async Task<List<Consulta>> GetCustormerDates(string clienteId, DateTime fecha)
         {
-            return await _collection.Find(c => c.ClienteId.Equals(clienteId)
-                                            && c.FechaConsulta.Date.Equals(fecha)).ToListAsync();
+            //var  citas = await _collection.Find(c => c.ClienteId == clienteId && c.FechaConsulta.Date == fecha.Date).ToListAsync();
+            return await _collection.Find(c => c.ClienteId.Equals(clienteId) && c.FechaConsulta.Equals(fecha)).ToListAsync();
+            //return await _collection.Find(c => c.ClienteId.Equals(clienteId) && c.FechaConsulta == (fecha.Date)).ToListAsync();
+            //return  citas;
         }
 
         public async Task<List<Consulta>> GetDoctorDates(string doctorId, DateTime fecha)
         {
-            return await _collection.Find(c => c.DoctorId.Equals(doctorId)
-                                            && c.FechaConsulta.Date.Equals(fecha)).ToListAsync();
+            return await _collection.Find(c => c.DoctorId.Equals(doctorId) && c.FechaConsulta.Equals(fecha)).ToListAsync();
         }
     }
 }

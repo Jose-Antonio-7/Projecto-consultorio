@@ -17,44 +17,61 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consultorio.Infraestructura
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consultorio.Api", "Consultorio.Api\Consultorio.Api.csproj", "{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultorio.infraestructura.MongoDB", "Consultorio.infraestructura.MongoDB\Consultorio.infraestructura.MongoDB.csproj", "{E012D9F1-D28F-4F1E-A351-0C8312D2484A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consultorio.infraestructura.MongoDB", "Consultorio.infraestructura.MongoDB\Consultorio.infraestructura.MongoDB.csproj", "{E012D9F1-D28F-4F1E-A351-0C8312D2484A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug-Mongo|Any CPU = Debug-Mongo|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A7EC96C7-219D-4FEC-ACF2-998A98221DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7EC96C7-219D-4FEC-ACF2-998A98221DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EC96C7-219D-4FEC-ACF2-998A98221DA6}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{A7EC96C7-219D-4FEC-ACF2-998A98221DA6}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{A7EC96C7-219D-4FEC-ACF2-998A98221DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7EC96C7-219D-4FEC-ACF2-998A98221DA6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{94070CF1-143A-4A7A-B4D0-84BD8BF0D257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94070CF1-143A-4A7A-B4D0-84BD8BF0D257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94070CF1-143A-4A7A-B4D0-84BD8BF0D257}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{94070CF1-143A-4A7A-B4D0-84BD8BF0D257}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{94070CF1-143A-4A7A-B4D0-84BD8BF0D257}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94070CF1-143A-4A7A-B4D0-84BD8BF0D257}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D21B72E8-7236-45B8-8151-FB0425AFD7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D21B72E8-7236-45B8-8151-FB0425AFD7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21B72E8-7236-45B8-8151-FB0425AFD7A6}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{D21B72E8-7236-45B8-8151-FB0425AFD7A6}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{D21B72E8-7236-45B8-8151-FB0425AFD7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D21B72E8-7236-45B8-8151-FB0425AFD7A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24191D2C-9473-4B61-9FAE-B490120DA814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24191D2C-9473-4B61-9FAE-B490120DA814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24191D2C-9473-4B61-9FAE-B490120DA814}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{24191D2C-9473-4B61-9FAE-B490120DA814}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{24191D2C-9473-4B61-9FAE-B490120DA814}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24191D2C-9473-4B61-9FAE-B490120DA814}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43D464C5-E2B2-4E17-A933-AB0E56487CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43D464C5-E2B2-4E17-A933-AB0E56487CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D464C5-E2B2-4E17-A933-AB0E56487CFD}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{43D464C5-E2B2-4E17-A933-AB0E56487CFD}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{43D464C5-E2B2-4E17-A933-AB0E56487CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43D464C5-E2B2-4E17-A933-AB0E56487CFD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FE38DD9-D5EB-4FE6-A629-598B7B423483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FE38DD9-D5EB-4FE6-A629-598B7B423483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE38DD9-D5EB-4FE6-A629-598B7B423483}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{7FE38DD9-D5EB-4FE6-A629-598B7B423483}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{7FE38DD9-D5EB-4FE6-A629-598B7B423483}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FE38DD9-D5EB-4FE6-A629-598B7B423483}.Release|Any CPU.Build.0 = Release|Any CPU
 		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53A4112F-C3A4-4CBB-92E9-2D3982A5CB94}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Debug-Mongo|Any CPU.ActiveCfg = Debug-Mongo|Any CPU
+		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Debug-Mongo|Any CPU.Build.0 = Debug-Mongo|Any CPU
 		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E012D9F1-D28F-4F1E-A351-0C8312D2484A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
